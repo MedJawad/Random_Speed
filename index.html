@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random !!</title>
+	<style type="text/css">
+	h2{display: inline-block;}
+	body{
+		height: 600px;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Test Your Reaction Speed !</h1>
+		<h2 >Your Speed Was : </h2> <h2 id="speed"></h2>
+	</header>
+			<button onclick=appear()>Debug</button>
+	<div id="Screen">
+		<button onclick=appear()>START</button>
+	</div>
+
+	<script type="text/javascript">
+		var seconds=0;
+		function appear(){
+			document.getElementById("speed").innerHTML=(seconds.toFixed(3))+"s";
+			seconds=0;
+			document.getElementById("Screen").innerHTML = "<div id='dis' onclick=appear()></div>";
+			document.getElementById("dis").style.backgroundColor = '#'+(Math.random()*0xffffff<<0).toString(16);
+			document.getElementById("dis").style.borderRadius = Math.random()*50 + "%";
+			document.getElementById("dis").style.width= (Math.random()*100 +50)+"px";
+			document.getElementById("dis").style.height= (Math.random()*100 +50)+"px";
+			document.getElementById("dis").style.marginLeft= (Math.random()*800 +20)+"px";
+			document.getElementById("dis").style.marginTop= (Math.random()*300 +20)+"px";
+			
+		}
+					window.setInterval(count,1);
+
+		function count(){
+			seconds+=0.005;
+		}
+	</script>
+</body>
+</html>
